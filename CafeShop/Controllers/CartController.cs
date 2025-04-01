@@ -1,10 +1,10 @@
-﻿using CafeShop.Models;
+using CafeShop.Models;
 using CafeShop.Models.DTOs;
 using CafeShop.Reposiory;
 using CafeShop.Config;
 using Microsoft.AspNetCore.Mvc;
 using CafeShop.Repository;
-
+//�?�sdasdasdqweasdadqwdasd
 namespace CafeShop.Controllers
 {
     public class CartController : Controller
@@ -27,7 +27,7 @@ namespace CafeShop.Controllers
             Account acc = _accRepo.GetByID(HttpContext.Session.GetInt32("AccountId") ?? 0) ?? new Account();
             if (acc.Id <= 0)
             {
-                return Json(new { status = 0, massage = "Đăng nhập để sử dụng tính năng!" });
+                return Json(new { status = 0, massage = "??ng nh?p ?? s? d?ng t�nh n?ng!" });
             }
             List<CartDto> lst = SQLHelper<CartDto>.ProcedureToList("spGetCartByAccountId",
                                                                     new string[] { "@AccountId" },
@@ -36,7 +36,7 @@ namespace CafeShop.Controllers
             {
                 item.lstToppings = SQLHelper<Topping>.SqlToList($"SELECT t.* FROM dbo.CartTopping AS pt LEFT JOIN dbo.Topping AS t ON pt.ToppingID = t.ID WHERE pt.CartID = {item.CartId}");
             }
-            if (lst.Count == 0) return Json(new { status = 2, massage = "Bạn chưa có sản phẩm nào trong giỏ hàng!" });
+            if (lst.Count == 0) return Json(new { status = 2, massage = "B?n ch?a c� s?n ph?m n�o trong gi? h�ng!" });
 
             return Json(new { status = 1, massage = "", data = lst });
 
@@ -49,13 +49,13 @@ namespace CafeShop.Controllers
             {
                 Account acc = _accRepo.GetByID(HttpContext.Session.GetInt32("AccountId") ?? 0) ?? new Account();
 
-                if (data.AccountID <= 0 || acc.Id <= 0) return Json(new { status = 0, message = "Hãy đăng nhập để sử dụng tính năng này!" });
-                if (data.ProductDetailID <= 0) return Json(new { status = 0, message = "Hãy chọn size sản phẩm!" });
+                if (data.AccountID <= 0 || acc.Id <= 0) return Json(new { status = 0, message = "H�y ??ng nh?p ?? s? d?ng t�nh n?ng n�y!" });
+                if (data.ProductDetailID <= 0) return Json(new { status = 0, message = "H�y ch?n size s?n ph?m!" });
 
 
                 List<Cart> lst = SQLHelper<Cart>.SqlToList($"SELECT * FROM Cart WHERE AccountId = {data.AccountID}");
 
-                // Tìm lại productDetail đã có trong giỏ hàng
+                // T�m l?i productDetail ?� c� trong gi? h�ng
                 List<Cart> lstModel = lst.Where(x => x.ProductDetailId == data.ProductDetailID).ToList();
                 List<CartDataDTO> lstData = new List<CartDataDTO>();
                 foreach (Cart item in lstModel) 
@@ -75,7 +75,7 @@ namespace CafeShop.Controllers
                 lstData = lstData.Where(p=> p.lstTopping.Count == data.ToppingIDs.Count).ToList();
                 Cart model = new Cart();
 
-                //Tìm cart productDetail có cx topping
+                //T�m cart productDetail c� cx topping
                 foreach (CartDataDTO item in lstData) 
                 {
                     bool isValid = true;
@@ -121,7 +121,7 @@ namespace CafeShop.Controllers
                 }
 
 
-                return Json(new { status = 1, message = "Thêm vào giỏ hàng thành công!" });
+                return Json(new { status = 1, message = "Th�m v�o gi? h�ng th�nh c�ng!" });
             }
             catch (Exception ex)
             {
@@ -143,7 +143,7 @@ namespace CafeShop.Controllers
                     _repo.Delete(model.Id);
                     SQLHelper<CartTopping>.SqlToList($"DELETE FROM dbo.CartTopping WHERE CartID = {model.Id}");
                 }
-                return Json(new { status = 1, message = "Cập nhật giỏ hàng thành công!" });
+                return Json(new { status = 1, message = "C?p nh?t gi? h�ng th�nh c�ng!" });
             }
             catch (Exception ex)
             {
