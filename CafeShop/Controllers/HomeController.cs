@@ -20,6 +20,8 @@ namespace CafeShop.Controllers
             _logger = logger;
         }
 
+
+        // ================== Trang chủ =======================
         public IActionResult Index()
         {
             Account acc = _accRepo.GetByID(HttpContext.Session.GetInt32("AccountId") ?? 0) ?? new Account();
@@ -36,6 +38,17 @@ namespace CafeShop.Controllers
                 
             return View();
         }
+        //======================= End =======================
+
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+        //======================= Đăng nhập =======================
         [HttpGet]
         public IActionResult Privacy()
         {
@@ -46,13 +59,6 @@ namespace CafeShop.Controllers
 
             return View();
         }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
         [HttpPost]        
         public IActionResult Privacy(string Email = "", string PassWord = "")
         {
@@ -77,5 +83,8 @@ namespace CafeShop.Controllers
             }
             else return  RedirectToAction("Index", "Home");
         }
+
+        //======================= End =======================
+
     }
 }

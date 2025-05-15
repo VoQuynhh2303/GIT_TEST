@@ -1,35 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LMK205\\DATN\\Code\\DATN_2021607554\\DATN_2021607554\\CafeShop\\CafeShop.csproj": {}
+    "E:\\DATN_VoThiQuynh_2021604331\\DATN_2021607554\\CafeShop\\CafeShop.csproj": {}
   },
   "projects": {
-    "D:\\LMK205\\DATN\\Code\\DATN_2021607554\\DATN_2021607554\\CafeShop\\CafeShop.csproj": {
+    "E:\\DATN_VoThiQuynh_2021604331\\DATN_2021607554\\CafeShop\\CafeShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LMK205\\DATN\\Code\\DATN_2021607554\\DATN_2021607554\\CafeShop\\CafeShop.csproj",
+        "projectUniqueName": "E:\\DATN_VoThiQuynh_2021604331\\DATN_2021607554\\CafeShop\\CafeShop.csproj",
         "projectName": "CafeShop",
-        "projectPath": "D:\\LMK205\\DATN\\Code\\DATN_2021607554\\DATN_2021607554\\CafeShop\\CafeShop.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\LMK205\\DATN\\Code\\DATN_2021607554\\DATN_2021607554\\CafeShop\\obj\\",
+        "projectPath": "E:\\DATN_VoThiQuynh_2021604331\\DATN_2021607554\\CafeShop\\CafeShop.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "E:\\DATN_VoThiQuynh_2021604331\\DATN_2021607554\\CafeShop\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,11 +35,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -101,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
